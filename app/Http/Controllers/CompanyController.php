@@ -97,9 +97,14 @@ class CompanyController extends Controller
                 'email'=> 'required|email',
                 'logo' => 'dimensions:min_width=100,min_height=100'            
             ]);      
-
-            $filename = $request->file('logo')->getClientOriginalName();
-            $logoPath = $request->file('logo')->storeAs('public',$filename);
+            
+            if($request->file('logo') != null ){
+                $filename = $request->file('logo')->getClientOriginalName();
+                $logoPath = $request->file('logo')->storeAs('public',$filename);
+            }else{
+                $filename = $request->hidden_image;
+            }
+            
 
            $data = array(
                'name' => $request->name,

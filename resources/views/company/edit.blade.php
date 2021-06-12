@@ -41,6 +41,7 @@
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Company Logo</label>
                             <img src="{{ asset('storage/'. $company->logo) }}" class="img-thumbnail"></img> 
+                            <input type="hidden" name="hidden_image" class="form-control-file" value="{{$company->logo}}">
                         </div><br> 
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Update Logo  <span style="color:red;"> Logo must be atleast 100x100 height and width</span></label>

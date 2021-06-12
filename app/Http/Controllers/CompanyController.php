@@ -38,8 +38,6 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-
             $company = new company();
             $request->validate([
                 'name' => 'required',
@@ -60,12 +58,7 @@ class CompanyController extends Controller
             $company->save();
 
             return redirect()->route('company.index')
-                ->with('success','Company Created Successfully');
-          
-          } catch (\Exception $e) {
-          
-              return $e->getMessage();
-          }       
+                ->with('success','Company Created Successfully');   
     }
 
     /**
@@ -98,8 +91,7 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, company $company)
-    {   
-        try {
+    {           
             $request->validate([
                 'name' => 'required',
                 'email'=> 'required|email',
@@ -119,13 +111,8 @@ class CompanyController extends Controller
             $company->update($data);
      
             return redirect()->route('company.index')
-                     ->with('success','Company Updated Successfully');
-          
-          } catch (\Exception $e) {
-          
-              return $e->getMessage();
-          }     
-        
+                     ->with('success','Company Updated Successfully');          
+         
     }
 
     /**

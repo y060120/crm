@@ -37,18 +37,18 @@
             @else
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="navbar-brand" href="{{ url('/home') }}">
+                        <li class="{{ Request::is('home') ? 'nav-item active' : 'nav-item' }}">
+                            <a class="nav-link" href="{{ url('/home') }}">
                                 Home
                             </a>
                         </li> 
-                        <li class="nav-item active">
-                            <a class="navbar-brand" href="{{ url('/company') }}">
+                        <li class="{{ Request::is('company') ? 'nav-item active' : 'nav-item' }}">
+                            <a class="nav-link" href="{{ url('/company') }}">
                                 Company
                             </a>
                         </li> 
-                        <li class="nav-item active">
-                            <a class="navbar-brand" href="{{ url('/employee') }}">
+                        <li class="{{ Request::is('employee') ? 'nav-item active' : 'nav-item' }}">
+                            <a class="nav-link" href="{{ url('/employee') }}">
                                 Employee
                             </a>
                         </li> 

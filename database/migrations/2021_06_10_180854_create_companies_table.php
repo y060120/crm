@@ -19,7 +19,8 @@ class CreateCompaniesTable extends Migration
             $table->string('email');
             $table->string('logo');
             $table->string('website');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();      
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
